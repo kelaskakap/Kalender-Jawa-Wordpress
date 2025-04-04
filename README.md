@@ -45,7 +45,7 @@ Jika Anda ingin berkontribusi, silakan fork repositori ini dan buat pull request
 ## 🍹 **Trakteer Saya**
 Jika kamu suka dengan repositori ini dan ingin mendukung saya, bisa traktir saya cendol di sini:
 
-[![Trakteer](https://img.shields.io/badge/🍹%20Trakteer%20Saya-green?style=for-the-badge)](https://teer.id/kiosmerdeka)
+[![Trakteer](https://img.shields.io/badge/🍹%20Trakteer%20Saya-red?style=for-the-badge)](https://teer.id/kiosmerdeka)
 
 ---
 
