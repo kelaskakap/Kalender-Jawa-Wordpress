@@ -1,0 +1,200 @@
+/* Container Utama */
+#kalender-jawa-container {
+    max-width: 1000px;
+    /* Diperlebar untuk tampilan tahunan */
+    margin: 20px auto;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigasi */
+#kalender-jawa-container .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+#kalender-jawa-container .nav button {
+    padding: 8px 15px;
+    background: #0073aa;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#kalender-jawa-container .nav button:hover {
+    background: #005177;
+}
+
+/* Tabel Kalender */
+.kalender-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.kalender-table th {
+    background: #0073aa;
+    color: white;
+    padding: 10px;
+    font-weight: normal;
+}
+
+.kalender-table td {
+    border: 1px solid #e0e0e0;
+    padding: 12px;
+    height: 60px;
+    vertical-align: top;
+    background: white;
+}
+
+/* Tampilan Tahun */
+#tahun-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 kolom */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.bulan-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.bulan-container h4 {
+    margin: 0;
+    padding: 12px;
+    background: #f8f9fa;
+    font-size: 1.1em;
+}
+
+/* Tampilan Mobile */
+@media (max-width: 768px) {
+    #tahun-container {
+        grid-template-columns: 1fr;
+    }
+
+    .kalender-table td {
+        padding: 8px;
+        height: 50px;
+    }
+}
+
+/* Tombol Aksi */
+#lihat-setahun,
+#kembali-bulanan {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#lihat-setahun:hover,
+#kembali-bulanan:hover {
+    background: #218838;
+}
+
+/* Teks Jawa */
+.jawa {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-top: 3px;
+}
+
+/* Tampilan Tahun */
+#tahun-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.bulan-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px;
+    break-inside: avoid; /* Untuk mencegah split bulan di halaman cetak */
+}
+
+.bulan-container h4 {
+    margin: 0 0 10px 0;
+    color: #2c3e50;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.bulan-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.bulan-table th {
+    background: #0073aa;
+    color: white;
+    padding: 8px;
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+.bulan-table td {
+    border: 1px solid #e0e0e0;
+    padding: 8px;
+    height: 60px;
+    vertical-align: top;
+    font-size: 0.9em;
+    position: relative;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    #tahun-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #tahun-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .bulan-table td {
+        height: 50px;
+        padding: 5px;
+    }
+}
+
+#judul-bulan {
+    /* Typography */
+    font-size: 1.4em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-family: var(--wp--preset--font-family--heading);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #judul-bulan {
+        font-size: 1.1em;
+        padding: 6px 12px;
+        margin: 0 10px;
+    }
+}
