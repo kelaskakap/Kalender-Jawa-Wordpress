@@ -26,10 +26,10 @@ Tampilan utama kalender:
 ![Kalender Jawa](https://raw.githubusercontent.com/kelaskakap/Kalender-Jawa-Wordpress/master/ss/kj1.png)
 
 Mode tampilan 1 tahun:
-![Tampilan 1 Tahun](https://raw.githubusercontent.com/kelaskakap/Kalender-Jawa-Wordpress/master/ss/kj2.png)
+![Tampilan 1 Tahun](https://raw.githubusercontent.com/kelaskakap/Kalender-Jawa-Wordpress/master/ss/kj3.png)
 
 Shortcode:
-![Shortcode](https://raw.githubusercontent.com/kelaskakap/Kalender-Jawa-Wordpress/master/ss/kj3.png)
+![Shortcode](https://raw.githubusercontent.com/kelaskakap/Kalender-Jawa-Wordpress/master/ss/kj2.png)
 
 ## 🔧 **Pengembangan Selanjutnya**
 - Konversi lebih dalam (termasuk tahun Jawa & windu).
@@ -42,10 +42,10 @@ Plugin ini dirilis dengan lisensi **MIT**. Silakan gunakan dan modifikasi sesuai
 ## 🤝 **Kontribusi**
 Jika Anda ingin berkontribusi, silakan fork repositori ini dan buat pull request! Saran dan masukan sangat diterima.
 
-## ☕ **Trakteer Saya**
+## 🍹 **Trakteer Saya**
 Jika kamu suka dengan repositori ini dan ingin mendukung saya, bisa traktir saya cendol di sini:
 
-[![Trakteer](https://img.shields.io/badge/%E2%98%95%20Trakteer-orange?logo=buymeacoffee&logoColor=white)](https://teer.id/kiosmerdeka)
+[![Trakteer](https://img.shields.io/badge/🍹%20Trakteer%20Saya-green?style=for-the-badge)](https://teer.id/kiosmerdeka)
 
 ---
 
