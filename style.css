@@ -1,200 +1,307 @@
-/* Container Utama */
-#kalender-jawa-container {
-    max-width: 1000px;
-    /* Diperlebar untuk tampilan tahunan */
-    margin: 20px auto;
-    padding: 15px;
-    font-family: Arial, sans-serif;
+/* ============================================= */
+/* KALENDER JAWA - WORDPRESS OPTIMIZED CSS */
+/* ============================================= */
+
+/**
+ * DIMENSI LAYOUT (Match WordPress Core)
+ * - Mobile: <600px
+ * - Tablet: 600px-782px
+ * - Desktop: ≥782px
+ * - Wide: ≥1280px
+ */
+
+/* VARIABLES (Sesuai WordPress Default) */
+:root {
+    --wp--style--global--content-size: 1200px;
+    --wp--preset--color--primary: #0073aa;
+    --wp--preset--color--secondary: #28a745;
+    --wp--preset--color--text: #2c3e50;
+    --wp--preset--color--background: #ffffff;
+    --wp--preset--spacing--30: 1.5em;
 }
 
-/* Navigasi */
-#kalender-jawa-container .nav {
+/* CONTAINER UTAMA (Match .entry-content) */
+.entry-content #kalender-jawa-container {
+    width: 100%;
+    max-width: var(--wp--style--global--content-size);
+    margin: 0 auto var(--wp--preset--spacing--30);
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* NAVIGASI (Optimal untuk Editor Gutenberg) */
+.entry-content .kalender-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 15px 0;
-    padding: 10px;
-    background: #f8f9fa;
-    border-radius: 5px;
+    gap: 1em;
+    margin: 1.5em 0;
+    padding: 0.8em 1em;
+    background: rgba(0, 115, 170, 0.05);
+    border-radius: 8px;
 }
 
-#kalender-jawa-container .nav button {
-    padding: 8px 15px;
-    background: #0073aa;
+.entry-content .kalender-nav button {
+    padding: 0.5em 1em;
+    background: var(--wp--preset--color--primary);
     color: white;
     border: none;
-    border-radius: 3px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background 0.3s;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+    flex: 0 0 auto;
+    /* Ubah dari flex: 1 0 auto */
+    min-width: 120px;
+    /* Lebar minimum untuk tombol */
 }
 
-#kalender-jawa-container .nav button:hover {
-    background: #005177;
+.entry-content #judul-bulan {
+    font-size: clamp(1.2em, 3vw, 1.5em);
+    font-weight: 600;
+    color: var(--wp--preset--color--text);
+    text-align: center;
+    flex: 1;
+    /* Mengisi ruang tersisa di tengah */
+    margin: 0;
+    padding: 0 1em;
+    /* Spacing horizontal */
 }
 
-/* Tabel Kalender */
-.kalender-table {
+/* TAMPILAN BULANAN (Table Layout) */
+.entry-content .kalender-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 10px 0;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin: 1.5em 0;
+    background: var(--wp--preset--color--background);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.kalender-table th {
-    background: #0073aa;
+.entry-content .kalender-table th {
+    background: var(--wp--preset--color--primary);
     color: white;
-    padding: 10px;
-    font-weight: normal;
-}
-
-.kalender-table td {
-    border: 1px solid #e0e0e0;
-    padding: 12px;
-    height: 60px;
-    vertical-align: top;
-    background: white;
-}
-
-/* Tampilan Tahun */
-#tahun-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* 3 kolom */
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.bulan-container {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.bulan-container h4 {
-    margin: 0;
-    padding: 12px;
-    background: #f8f9fa;
-    font-size: 1.1em;
-}
-
-/* Tampilan Mobile */
-@media (max-width: 768px) {
-    #tahun-container {
-        grid-template-columns: 1fr;
-    }
-
-    .kalender-table td {
-        padding: 8px;
-        height: 50px;
-    }
-}
-
-/* Tombol Aksi */
-#lihat-setahun,
-#kembali-bulanan {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin: 15px 0;
-    background: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-#lihat-setahun:hover,
-#kembali-bulanan:hover {
-    background: #218838;
-}
-
-/* Teks Jawa */
-.jawa {
-    display: block;
-    font-size: 12px;
-    color: #666;
-    margin-top: 3px;
-}
-
-/* Tampilan Tahun */
-#tahun-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.bulan-container {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 15px;
-    break-inside: avoid; /* Untuk mencegah split bulan di halaman cetak */
-}
-
-.bulan-container h4 {
-    margin: 0 0 10px 0;
-    color: #2c3e50;
-    font-size: 1.1em;
+    padding: 0.8em;
+    font-weight: 500;
+    font-size: 0.85em;
     text-align: center;
+    letter-spacing: 0.5px;
 }
 
-.bulan-table {
+.entry-content .kalender-table td {
+    border: 1px solid #e0e0e0;
+    padding: 0.8em;
+    height: 5em;
+    vertical-align: top;
+    transition: all 0.15s ease;
+}
+
+/* TANGGAL & TEKS JAWA */
+.entry-content .tanggal-greg {
+    display: block;
+    font-weight: 600;
+    font-size: 1em;
+    color: var(--wp--preset--color--text);
+    margin-bottom: 0.3em;
+    line-height: 1.2;
+}
+
+.entry-content .tanggal-jawa {
+    display: block;
+    font-size: 0.75em;
+    color: #666;
+    line-height: 1.3;
+}
+
+/* TAMPILAN TAHUNAN (Grid Layout) */
+.entry-content #tahun-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--wp--preset--spacing--30);
+    margin-top: 2em;
+}
+
+.entry-content .bulan-container {
+    background: var(--wp--preset--color--background);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    break-inside: avoid;
+}
+
+.entry-content .bulan-table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
 }
 
-.bulan-table th {
-    background: #0073aa;
-    color: white;
-    padding: 8px;
-    font-size: 0.9em;
-    font-weight: normal;
+.entry-content .bulan-table th {
+    background: var(--wp--preset--color--primary);
+    color: white !important;
+    padding: 0.5em !important;
+    font-size: 0.7em !important;
+    text-align: center !important;
 }
 
-.bulan-table td {
-    border: 1px solid #e0e0e0;
-    padding: 8px;
-    height: 60px;
-    vertical-align: top;
-    font-size: 0.9em;
-    position: relative;
+.entry-content .bulan-table td {
+    border: 1px solid #e0e0e0 !important;
+    padding: 0.3em !important;
+    height: 3.5em !important;
+    font-size: 0.8em !important;
+    text-align: center !important;
+    vertical-align: middle !important;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    #tahun-container {
+.entry-content .jawa {
+    font-size: 0.7em;
+    /* Ukuran font lebih kecil */
+    line-height: 1.2;
+    /* Jarak antar baris lebih rapat */
+    display: block;
+    /* Membuat text di bawah tanggal */
+    margin-top: 2px;
+    /* Spacing dari tanggal di atas */
+    color: #666;
+    /* Warna abu-abu yang soft */
+    font-family: Arial, sans-serif;
+    /* Font spesifik untuk teks Jawa */
+}
+
+/* Untuk tampilan mobile */
+@media (max-width: 600px) {
+    .entry-content .jawa {
+        font-size: 0.6em;
+        /* Lebih kecil lagi di mobile */
+        line-height: 1.1;
+    }
+}
+
+/* ============================================= */
+/* RESPONSIVE BREAKPOINTS (WordPress Standard) */
+/* ============================================= */
+
+/* Tablet (600px-782px) */
+@media (min-width: 600px) and (max-width: 781px) {
+    .entry-content #tahun-container {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .entry-content .kalender-table td {
+        height: 4.5em;
+        padding: 0.6em;
+    }
 }
 
-@media (max-width: 768px) {
-    #tahun-container {
+/* Mobile (<600px) */
+@media (max-width: 599px) {
+    .entry-content #tahun-container {
         grid-template-columns: 1fr;
+        gap: 1em;
     }
-    
-    .bulan-table td {
-        height: 50px;
-        padding: 5px;
+
+    .entry-content .kalender-table td {
+        height: 3.5em;
+        padding: 0.4em;
+    }
+
+    .entry-content .tanggal-jawa {
+        font-size: 0.65em;
     }
 }
 
-#judul-bulan {
-    /* Typography */
-    font-size: 1.4em;
-    font-weight: 600;
-    letter-spacing: 1px;
-    font-family: var(--wp--preset--font-family--heading);
+/* Small Mobile (<400px) */
+@media (max-width: 399px) {
+    .entry-content .kalender-table th {
+        font-size: 0.75em;
+        padding: 0.5em;
+    }
+
+    .entry-content .bulan-table td {
+        height: 2.8em;
+    }
+
+    .entry-content .tanggal-jawa {
+        display: none;
+    }
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    #judul-bulan {
-        font-size: 1.1em;
-        padding: 6px 12px;
-        margin: 0 10px;
+/* ============================================= */
+/* DARK MODE SUPPORT (WordPress 5.9+) */
+/* ============================================= */
+@media (prefers-color-scheme: dark) {
+    .entry-content #kalender-jawa-container {
+        --wp--preset--color--text: #e0e0e0;
+        --wp--preset--color--background: #1e1e1e;
+    }
+
+    .entry-content .kalender-table,
+    .entry-content .bulan-container {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .entry-content .kalender-table td,
+    .entry-content .bulan-table td {
+        border-color: #3a3a3a;
+        background: #2a2a2a;
+    }
+
+    .entry-content .tanggal-greg {
+        color: #f0f0f0;
+    }
+
+    .entry-content .tanggal-jawa {
+        color: #aaa;
+    }
+}
+
+/* ============================================= */
+/* ANIMATIONS & MICRO-INTERACTIONS */
+/* ============================================= */
+@keyframes kalenderFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.entry-content #kalender-jawa-container {
+    animation: kalenderFadeIn 0.4s ease-out;
+}
+
+.entry-content .kalender-table td:hover {
+    transform: scale(1.02);
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================= */
+/* PRINT STYLES */
+/* ============================================= */
+@media print {
+    .entry-content #kalender-jawa-container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .entry-content .kalender-nav,
+    .entry-content #lihat-setahun,
+    .entry-content #kembali-bulanan {
+        display: none;
+    }
+
+    .entry-content #tahun-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+    }
+
+    .entry-content .kalender-table td,
+    .entry-content .bulan-table td {
+        background: white !important;
+        color: black !important;
     }
 }

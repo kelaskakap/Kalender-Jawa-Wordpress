@@ -24,9 +24,9 @@ function kalender_jawa_shortcode()
         <!-- Tampilan Bulanan -->
         <div id="kalender-bulanan">
             <div class="nav">
-                <button onclick="ubahBulan(-1)">« Sebelumnya</button>
+                <button onclick="KalenderJawa.ubahBulan(-1)">« Sebelumnya</button>
                 <span id="judul-bulan"></span>
-                <button onclick="ubahBulan(1)">Berikutnya »</button>
+                <button onclick="KalenderJawa.ubahBulan(1)">Berikutnya »</button>
             </div>
             <table class="kalender-table">
                 <thead>
@@ -46,11 +46,11 @@ function kalender_jawa_shortcode()
 
         <!-- Tampilan Tahunan -->
         <div id="kalender-tahunan" style="display:none;">
-            <button id="kembali-bulanan" onclick="tutupTampilanTahun()">← Kembali ke Tampilan Bulanan</button>
+            <button id="kembali-bulanan" onclick="KalenderJawa.tutupTampilanTahun()">← Kembali ke Tampilan Bulanan</button>
             <div id="tahun-container"></div>
         </div>
 
-        <button id="lihat-setahun" onclick="tampilkanTahun()">📅 Lihat Kalender 1 Tahun</button>
+        <button id="lihat-setahun" onclick="KalenderJawa.tampilkanTahun()">📅 Lihat Kalender 1 Tahun</button>
     </div>
 <?php
     return ob_get_clean();
